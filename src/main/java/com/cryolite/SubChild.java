@@ -1,10 +1,11 @@
 package com.cryolite;
 
-import org.springframework.stereotype.Component;
-
 public class SubChild {
 
+    public SubChild(){}
+
     public SubChild(String index){
+        super();
         this.index = index;
     }
 

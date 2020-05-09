@@ -13,7 +13,7 @@ XML Based Configuration
 1. getBean is used to procure the desired bean. getBean is provided by spring which allows the use of either
 BeanFactory or ApplicationContext interface to use the method getBean.
 
-2. ApplicationContext of type ClassPathXMLApplicationContext has been used to fetch the bean for Vehicle class.
+2. ApplicationContext of type ClassPathXMLApplicationContext has been used to fetch the bean for Parent class.
 The constructor argument of ClassPathXMLApplicationContext receives a string with the name of xml file containing the
 bean configuration. i.e when getBeans is called with a name then which class object should be returned.
 
@@ -27,7 +27,7 @@ At best use getBean(XYZ.class) instead of using string values.
 
 Annotation Based Configuration
 ---
-By default annotation based configuration is not enabled in Spring. They have to be enabled by adding the context:component-scan tag.
+By default, annotation based configuration is not enabled in Spring. They have to be enabled by adding the context:component-scan tag.
 The base package name goes there that will search for the @Component and inject that class into where it is @Autowired.
 
 The tag will ensure that spring starts automatically wire values into properties methods and constructors.
@@ -42,3 +42,18 @@ also called as setter injection.
 for the class that is being beaned. The property tag won't work here. constructor-arg tag is used to defined constructor
 injection. 
 
+Through the fire and works that need to be done right and then take tomorrow.
+We need more clear instructions on this particular story. Need your inputs here to move forward.
+Also please ensur ethat it works fine or it will be a waste of time.
+
+Autowiring 
+---
+
+1. To be noted: Annotation based configuration and XML based configuration can be mixed together and used at the same time.
+Such that configuration of some classes is defined through xml file and configuration of others defined through component annotation.
+context:component-scan and bean tag is an example of the same.
+
+2. Use Case 1: SubChild's bean configuration was defined in XML file. ChildA's configuration was defined through annotation
+with @Component
+
+3. We declared SubChild in ChildA via autowiring it and it worked.
