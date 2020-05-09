@@ -35,4 +35,10 @@ The tag will ensure that spring starts automatically wire values into properties
 Bean Property
 ---
 
+1. Property assigned through bean configuration file is done via calling the setter method internally. Hence, it is
+also called as setter injection.
+
+2. Property assignment can also be done via constructor injection. Parameterized Constructor needs to be assigned
+for the class that is being beaned. The property tag won't work here. constructor-arg tag is used to defined constructor
+injection. 
 
