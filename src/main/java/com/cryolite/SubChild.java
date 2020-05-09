@@ -1,5 +1,8 @@
 package com.cryolite;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class SubChild {
 
     public SubChild(){}

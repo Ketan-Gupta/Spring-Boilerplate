@@ -22,6 +22,7 @@ public class ChildA implements Parent{
 
     public void trigger()
      {
+         subChild.setIndex("Trial by Fire");
        logger.info("Child A - Trigger. " + subChild);
      }
 }

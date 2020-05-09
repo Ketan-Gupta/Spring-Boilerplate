@@ -2,6 +2,8 @@ TODO:
 ---
 1. Read on ClassPath in Spring.
 2. Read on XML Injection Annotation Injection
+3. Read on XML configured bean getting defined as a property in another bean without autowiring. i.e resolving 
+the dependecy injection by xml configurations itself with the property tag.
 
 FYI
 ---
@@ -52,8 +54,13 @@ Autowiring
 1. To be noted: Annotation based configuration and XML based configuration can be mixed together and used at the same time.
 Such that configuration of some classes is defined through xml file and configuration of others defined through component annotation.
 context:component-scan and bean tag is an example of the same.
-
 2. Use Case 1: SubChild's bean configuration was defined in XML file. ChildA's configuration was defined through annotation
 with @Component
+We declared SubChild in ChildA via autowiring it and it worked.
+Autowiring worked because the bean configuration of SubClass was already defined in the XML file, where we defined the instance that 
+the id of the SubClass should return.
+If the XML bean configuration of SubClass is removed, the autowiring fails, since upto this point SubClass was not configured
+using annotation configuration i.e @Component.
 
-3. We declared SubChild in ChildA via autowiring it and it worked.
+3. Use Case 2: SubChild is configured using annotation based configuration i.e using @Component bean. This can inturn be
+autowired using @Autowired in other beans.

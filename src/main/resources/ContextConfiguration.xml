@@ -14,12 +14,10 @@
     <bean id="Parent" class="com.cryolite.ChildA">
     </bean>
     -->
+    <!--
     <bean id="SubChild" class="com.cryolite.SubChild">
-        <!--
         <property name="index" value="Trial by Fire"></property>
-        -->
-        <!--
         <constructor-arg value="Trial by Fire - Constructor"></constructor-arg>
-        -->
     </bean>
+    -->
 </beans>
