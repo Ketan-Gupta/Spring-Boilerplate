@@ -1,0 +1,38 @@
+TODO:
+---
+1. Read on ClassPath in Spring.
+2. Read on XML Injection Annotation Injection
+
+FYI
+---
+
+1. We do not include the version in the schema naming in bean configuration file.
+
+XML Based Configuration
+---
+1. getBean is used to procure the desired bean. getBean is provided by spring which allows the use of either
+BeanFactory or ApplicationContext interface to use the method getBean.
+
+2. ApplicationContext of type ClassPathXMLApplicationContext has been used to fetch the bean for Vehicle class.
+The constructor argument of ClassPathXMLApplicationContext receives a string with the name of xml file containing the
+bean configuration. i.e when getBeans is called with a name then which class object should be returned.
+
+3. The bean configuration file should be placed in resources folder. Since ClassPathXMLApplicationContext looks for
+configuration file inside the src/main/resources folder by default.
+
+Configurations in Spring are possible in three ways: 1. XML 2. Annotation Based 3. Java Configurations
+
+getBean by default can take bean names without the capitalization of the first letter. Ex: ChildA can be addressed as childA
+At best use getBean(XYZ.class) instead of using string values.
+
+Annotation Based Configuration
+---
+By default annotation based configuration is not enabled in Spring. They have to be enabled by adding the context:component-scan tag.
+The base package name goes there that will search for the @Component and inject that class into where it is @Autowired.
+
+The tag will ensure that spring starts automatically wire values into properties methods and constructors.
+
+Bean Property
+---
+
+
