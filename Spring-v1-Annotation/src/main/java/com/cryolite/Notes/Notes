@@ -9,3 +9,28 @@ Annotation Based Configuration using Configuration Class and not XML File
 7. Hence, for all the bean annotated methods written in configuration class, the name of method is of no relevance,
 what's important is the return type of that method, which is what is checked by the @Autowired annotation when it goes to 
 search inside the configuration class.
+
+8. The bean annotation was a replacement for the bean tag that was used in XML file.
+9. Beans can also be procured by not creating custom functions(annotated with @Bean) returning them.
+10. The way to do that would be to configure individual beans by annotating them with @Component.
+11. The appconfiguration class will have an addition annotation(along with @Configuration) called @ComponentScan with the
+path of the base package. This @ComponentScan mimics the componentscan tag which we used in the previous project's XML file.
+
+12. Since we mimicked the <bean> tag in XML by replacing it with @Component tag, the bean tag had the parameter id which was
+used to procure the bean, in case of Component annotation, the default name is name of class with first letter decapitalized.
+However, the name can be changed by passing custome name in Component("custom_name")
+
+FYI
+---
+
+In our case the interface did not have be annotated with @Component because the class extending it was defined as a bean with @Component.
+Hence it worked.
+This is a simple use case, we might have to expand on it when multiple classes are expanding that interface
+and then checking for when interface is autowired then which of the sub classes is beaned. Basically it will result in an error,
+because we just autowired the interface itself but did not specify which sub class's bean we want.
+
+This can be resolved by annotating @Primary before the sub class implementing the interface to deem it as the default bean,
+that should be returned whenever the interface is autowired.
+
+Another solution is to add @Qualifier("subProcessorTwo") before the autowiring of the interface to specify by yourself which 
+subclass's bean you want. Used in cases when @Primary annotation is not wanted.
