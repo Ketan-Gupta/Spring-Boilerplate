@@ -1,0 +1,11 @@
+Annotation Based Configuration using Configuration Class and not XML File
+---
+1. The Application Context is loaded using AnnotationConfigApplicationContext.
+2. Instead of using XML File, we use a special dedicated class defined to list the configuration.
+3. The file is suffixed with @Configuration.
+4. The configuration class contains individual method that will return the newly created object of the bean.
+5. Those individual methods are annotated with @Bean to specify that they will be returning a bean. 
+6. @Autowired by default always checks the type of bean that is being returned.
+7. Hence, for all the bean annotated methods written in configuration class, the name of method is of no relevance,
+what's important is the return type of that method, which is what is checked by the @Autowired annotation when it goes to 
+search inside the configuration class.

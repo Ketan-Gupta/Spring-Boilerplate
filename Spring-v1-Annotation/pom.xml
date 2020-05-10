@@ -5,14 +5,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.cryolite</groupId>
-  <artifactId>Spring-v1</artifactId>
+  <artifactId>Spring-v1-Annotation</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <modules>
-    <module>Spring-v1-Annotation</module>
-  </modules>
-  <packaging>pom</packaging>
 
-  <name>Spring-v1</name>
+  <name>Spring-v1-Annotation</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
